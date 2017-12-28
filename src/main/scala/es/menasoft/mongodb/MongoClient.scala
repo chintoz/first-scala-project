@@ -25,4 +25,6 @@ package es.menasoft.mongodb {
     def  collectionNames = for (name <- new JSetWrapper(underlying.getCollectionNames)) yield name
   }
 
+  class DBCollection (override val underlying: MongoDBCollection) extends ReadOnly
+
 }
